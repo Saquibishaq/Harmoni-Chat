@@ -3,7 +3,7 @@ import { useAuth } from '../context/AuthContext';
 import io from 'socket.io-client';
 import './ChatBox.css';
 
-const socket = io('http://localhost:5003');
+const socket = io('https://harmoni-chat-6.onrender.com');
 
 const ChatBox = () => {
   const { user } = useAuth();
