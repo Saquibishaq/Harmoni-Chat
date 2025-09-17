@@ -1,31 +1,32 @@
 # macOS system files
 .DS_Store
+.Trash
 .Trashes
-.Trash/
 
 # node modules
 node_modules/
 
-# log files
+# Logs
 *.log
 
-# temp files
+# temp folders
 tmp/
 temp/
 .cache/
 
-# OS generated files
-ehthumbs.db
-Thumbs.db
-
-# env files
-.env
-*.env
-
-# IDE files
+# IDE/editor files
 .vscode/
 .idea/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
+
+# Environment files
+.env
+
+# Others
+*.swp
+*.swo
+*.bak
+*.backup
+*.log
+
+# Ignore everything else outside your project folder
+# You can't literally exclude ../../ files here; just don't run git outside your project root.
