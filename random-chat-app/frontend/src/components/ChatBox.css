@@ -1,139 +1,225 @@
-/* Outer Container */
-.chat-container {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+/* --- GLOBAL OVERRIDES: Remove all background/container artifacts --- */
+body, html, #root {
+  background-color: #111014 !important; /* solid black background */
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.container {
+  max-width: none !important;
+  width: 100% !important;
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+body > .container,
+body > div {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+/* --- Chat Card Layout --- */
+.chatbox-center-bg {
+  min-height: 100vh;
+  width: 100vw;
+  background: #111014;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Chat card style */
+.chatbox-card {
+  background: linear-gradient(125deg, #211e39 80%, #29234a 100%);
+  border-radius: 32px;
+  box-shadow: 0 10px 36px #4d3ea055;
+  width: 100%;
+  max-width: 440px;
+  min-height: 72vh;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  padding: 1rem;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0d0c1d, #1f1b2e); /* same space background */
-  color: #f8f8f8;
+  justify-content: flex-start;
+  padding-bottom: 18px;
+  margin: 0;
 }
 
-/* Header Text */
-.chat-header {
-  text-align: center;
-  margin-bottom: 1rem;
+.chatbox-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 28px 28px 12px 28px;
+  border-bottom: 1.5px solid #28243e33;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
 }
 
-.chat-header h1 {
-  font-size: 1.8rem;
-  margin-bottom: 0.3rem;
+.chatbox-userpic {
+  background: linear-gradient(90deg, #7c5fff 60%, #56a9fd 120%);
+  color: white;
+  font-weight: 900;
+  font-size: 2rem;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Chat Messages */
-.chat-messages {
-  flex: 1;
+.chatbox-welcome {
+  font-size: 1.27rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+.chatbox-welcome .highlight {
+  color: #7c5fff;
+}
+
+.chatbox-connected {
+  color: #b8b4da;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 2px;
+}
+.chatbox-connected .highlight {
+  color: #a78bfa;
+}
+
+.chatbox-messages {
+  flex: 1 1 auto;
+  padding: 26px 20px 9px 20px;
   overflow-y: auto;
-  background: #1c1c2e; /* matches login box background */
-  border-radius: 10px;
-  padding: 1rem;
+  background: transparent;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  box-shadow: 0 0 16px rgba(0, 212, 255, 0.15);
+  gap: 10px;
 }
 
-/* Chat Bubbles */
-.chat-bubble {
+.chatbox-bubble {
   margin: 0.5rem 0;
-  padding: 0.7rem 1rem;
-  border-radius: 12px;
-  max-width: 75%;
-  word-wrap: break-word;
-  line-height: 1.5;
+  padding: 0.7rem 1.1rem;
+  border-radius: 16px;
+  max-width: 76%;
+  word-break: break-word;
+  line-height: 1.52;
+  font-size: 1.07rem;
 }
 
-.chat-bubble.me {
-  background: linear-gradient(45deg, #007bff, #00d4ff);
+.chatbox-bubble.me {
+  background: linear-gradient(92deg, #09c6ff 30%, #7c5fff 100%);
   color: white;
   align-self: flex-end;
+  font-weight: 500;
 }
 
-.chat-bubble.other {
-  background-color: #333;
-  color: white;
+.chatbox-bubble.other {
+  background-color: #28234a;
+  color: #dffdff;
   align-self: flex-start;
+  font-weight: 500;
 }
 
-/* Typing Indicator */
-.typing {
+.chatbox-typing {
   font-style: italic;
-  font-size: 0.9rem;
-  color: #ccc;
+  font-size: 1.05rem;
+  color: #b2b2fd;
+  margin-top: 2px;
+  margin-left: 7px;
 }
 
-/* Chat Controls Section */
-.chat-controls {
+.chatbox-controls {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
+  gap: 0.65rem;
+  align-items: center;
+  margin-top: 10px;
+  padding: 13px 15px 0 15px;
 }
 
-/* Input Field */
-.chat-controls input {
-  flex: 1;
-  padding: 0.6rem;
-  border-radius: 6px;
+.chatbox-controls input {
+  flex: 1 1 0;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
   border: none;
-  background: #2a2a3e;
+  background: #232042;
   color: #fff;
   outline: none;
+  font-size: 1.11rem;
+  min-width: 0;
 }
 
-.chat-controls input::placeholder {
+.chatbox-controls input::placeholder {
   color: #aaa;
 }
 
-/* Button Styles */
-.chat-controls button {
-  padding: 0.6rem 1rem;
+.chatbox-controls button {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
   border: none;
   border-radius: 50px;
-  font-weight: bold;
+  padding: 0.65rem 1.45rem;
+  font-size: 1.07rem;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+  box-shadow: 0 0 10px rgba(124,101,255,0.15);
+  transition: background 0.17s, color 0.17s, box-shadow 0.17s, transform 0.17s;
+  margin-left: 0;
 }
 
-.chat-controls button:hover {
-  transform: scale(1.05);
-}
-
-/* Individual Button Types */
 .send {
-  background: linear-gradient(45deg, #007bff, #00d4ff);
-  color: white;
+  background: linear-gradient(92deg, #09c6ff 20%, #7c5fff 100%);
+  color: #fff;
 }
-
 .skip {
-  background: #ffc107;
-  color: black;
+  background: linear-gradient(92deg, #fecf2f 20%, #f7b90c 100%);
+  color: #232042;
 }
-
 .call {
-  background: #28a745;
-  color: white;
+  background: linear-gradient(92deg, #16d672 45%, #228c4c 100%);
+  color: #fff;
 }
-
 .end {
-  background: #dc3545;
-  color: white;
+  background: linear-gradient(92deg, #fe2c52 25%, #c40f40 100%);
+  color: #fff;
 }
 
-/* Call Indicator */
-.in-call {
-  margin-top: 0.5rem;
-  font-weight: bold;
-  color: #28a745;
+.chatbox-controls button:hover {
+  box-shadow: 0 6px 22px #7c5fff3a;
+  transform: translateY(-2px) scale(1.06);
 }
 
-/* Scrollbar Styling */
-.chat-messages::-webkit-scrollbar {
-  width: 6px;
-}
-.chat-messages::-webkit-scrollbar-thumb {
-  background-color: #444;
-  border-radius: 4px;
+@media (max-width: 600px) {
+  .chatbox-card {
+    max-width: 99vw;
+    min-height: 75vh;
+    border-radius: 0;
+    margin: 0;
+  }
+  .chatbox-header {
+    padding: 22px 6vw 10px 6vw;
+  }
+  .chatbox-messages {
+    padding-left: 5vw;
+    padding-right: 4vw;
+  }
+  .chatbox-controls {
+    padding-left: 3vw;
+    padding-right: 3vw;
+    gap: 8px;
+  }
+  .chatbox-controls button {
+    padding: 0.6rem 1.1rem;
+    font-size: 1rem;
+    min-width: 0;
+  }
 }
