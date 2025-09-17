@@ -1,2 +1,31 @@
+# macOS system files
+.DS_Store
+.Trashes
+.Trash/
+
+# node modules
 node_modules/
+
+# log files
+*.log
+
+# temp files
+tmp/
+temp/
+.cache/
+
+# OS generated files
+ehthumbs.db
+Thumbs.db
+
+# env files
 .env
+*.env
+
+# IDE files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
