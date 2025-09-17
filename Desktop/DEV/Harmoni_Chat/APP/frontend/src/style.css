@@ -1,0 +1,118 @@
+/* style.css */
+
+/* Reset some defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global body styles */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 30px;
+  }
+  
+  /* Container box for pages */
+  .container {
+    max-width: 600px;
+    width: 90%;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* ChatBox styles */
+  .chat-header {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+  }
+  
+  .chat-window {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background: #f9f9f9;
+  }
+  
+  .chat-message {
+    margin-bottom: 8px;
+  }
+  
+  .chat-message.you {
+    text-align: right;
+    color: #1d72b8;
+  }
+  
+  .chat-message.stranger {
+    text-align: left;
+    color: #333;
+  }
+  
+  .chat-controls {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .chat-controls input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+  }
+  
+  .chat-controls button {
+    padding: 10px 16px;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .chat-controls .send {
+    background-color: #007bff;
+  }
+  
+  .chat-controls .skip {
+    background-color: #dc3545;
+  }
+  
+  /* Auth Form */
+  .auth-box {
+    text-align: center;
+  }
+  
+  .auth-box h2 {
+    margin-bottom: 20px;
+  }
+  
+  .auth-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .auth-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
