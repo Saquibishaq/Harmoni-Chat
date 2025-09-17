@@ -123,7 +123,8 @@ module.exports = (io, socket) => {
   socket.on('voice-offer', (data) => {
     const partnerId = users.get(socket.id)?.partnerId;
     if (partnerId) {
-      io.to(partnerId).emit('voice-offer', { sdp: data.sdp });
+      const callerName = users.get(socket.id)?.username;
+      io.to(partnerId).emit('voice-offer', { sdp: data.sdp, callerName });
     }
   });
 
@@ -148,6 +149,14 @@ module.exports = (io, socket) => {
     }
   });
 
+  socket.on('call-declined', () => {
+    const partnerId = users.get(socket.id)?.partnerId;
+    if (partnerId) {
+      io.to(partnerId).emit('call-declined');
+    }
+  });
+
+  // DISCONNECT
   socket.on('disconnect', () => {
     const user = users.get(socket.id);
     if (user) {
