@@ -8,23 +8,23 @@ const socketHandler = require('./sockets/socketHandler');
 const authRoutes = require('./routes/authRoutes');
 
 dotenv.config();
-console.log('Starting server.js...');
+// console.log('Server Starting ....');
 
 connectDB();
-console.log('Database connection initiated.');
+// console.log('Database connection initiated.');
 
 const app = express();
 app.use(cors());
-console.log('CORS middleware applied.');
+// console.log('CORS middleware applied.');
 
 app.use(express.json());
-console.log('JSON middleware applied.');
+// console.log('JSON middleware applied.');
 
 app.use('/api/auth', authRoutes);
-console.log('Auth routes initialized.');
+// console.log('Auth routes initialized.');
 
 const server = http.createServer(app);
-console.log('HTTP server created.');
+// console.log('HTTP server created.');
 
 const io = new Server(server, {
   cors: {
@@ -32,7 +32,7 @@ const io = new Server(server, {
     methods: ['GET', 'POST'],
   },
 });
-console.log('Socket.IO server initialized.');
+// console.log('Socket.IO server initialized.');
 
 io.on('connection', (socket) => {
   console.log('Socket connected:', socket.id);
