@@ -9,7 +9,7 @@ const ChatPage = () => {
   return (
     <div className="container">
       <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>
-        Welcome {user.username}
+        {/* Welcome {user.username} */}
       </h2>
       <ChatBox />
     </div>
